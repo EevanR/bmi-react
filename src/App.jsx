@@ -16,6 +16,15 @@ class App extends Component {
 
   onSubmitHandler = e => {
     e.preventDefault();
+    const [bmiValue, bmiMessage] = calculateBmi(
+      this.state.weight,
+      this.state.height
+    );
+    this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage });
+  };
+  
+  handleAlternate = e => {
+    e.preventDefault();
     const [bmiValue, bmiMessage] = imperialBmi(
       this.state.weight,
       this.state.height
@@ -31,6 +40,7 @@ class App extends Component {
         height={this.state.height}
         onChangeHandler={this.onChangeHandler}
         onSubmitHandler={this.onSubmitHandler}
+        handleAlternate={this.handleAlternate}
       />
       {this.state.bmiValue && (
         <Message

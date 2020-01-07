@@ -7,7 +7,7 @@ const Form = props => {
       <input
         type="number"
         required
-        placeholder="Weight in kgs"
+        placeholder="Weight in kgs/lbs"
         value={props.weight}
         name="weight"
         id="weight"
@@ -17,13 +17,14 @@ const Form = props => {
       <input
         type="number"
         required
-        placeholder="Height in cm"
+        placeholder="Height in cm/inches"
         value={props.height}
         name="height"
         id="height"
         onChange={props.onChangeHandler}
       />
-      <button id='calculate'>Calculate BMI</button>
+      <button id='calculate'>Calculate Metric BMI</button>
+      <button onClick={props.handleAlternate.bind(this)} id='calculateImp'>Calculate Imperial BMI</button>
     </form>
   );
 };
