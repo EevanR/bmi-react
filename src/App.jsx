@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Form from "./components/Form";
 import Message from "./components/Message";
 import { calculateBmi, imperialBmi } from "./helper/bmiHelper";
-// import './App.css';
+import './App.css';
+import logo from './logo.svg';
 
 class App extends Component {
   state = {
@@ -34,20 +35,23 @@ class App extends Component {
 
   render() {
     return (
-    <div>
-      <Form 
-        weight={this.state.weight}
-        height={this.state.height}
-        onChangeHandler={this.onChangeHandler}
-        onSubmitHandler={this.onSubmitHandler}
-        handleAlternate={this.handleAlternate}
-      />
-      {this.state.bmiValue && (
-        <Message
-          bmiValue={this.state.bmiValue}
-          bmiMessage={this.state.bmiMessage}
+    <div className="App">
+      <div className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Form 
+          weight={this.state.weight}
+          height={this.state.height}
+          onChangeHandler={this.onChangeHandler}
+          onSubmitHandler={this.onSubmitHandler}
+          handleAlternate={this.handleAlternate}
         />
-      )}
+        {this.state.bmiValue && (
+          <Message
+            bmiValue={this.state.bmiValue}
+            bmiMessage={this.state.bmiMessage}
+          />
+        )}
+      </div>
     </div>
     )
   }
