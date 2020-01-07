@@ -7,7 +7,7 @@ const Form = props => {
       <input
         type="number"
         required
-        placeholder="Weight in kgs/lbs"
+        placeholder="Weight in kgs"
         value={props.weight}
         name="weight"
         id="weight"
@@ -17,7 +17,7 @@ const Form = props => {
       <input
         type="number"
         required
-        placeholder="Height in cm/inches"
+        placeholder="Height in cm"
         value={props.height}
         name="height"
         id="height"
