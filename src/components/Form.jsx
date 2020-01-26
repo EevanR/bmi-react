@@ -1,6 +1,7 @@
 import React from "react";
 
 const Form = props => {
+  
   return (
     <div className="ui form">
       <form onSubmit={props.onSubmitHandler}>
@@ -10,7 +11,7 @@ const Form = props => {
             <input
               type="number"
               required
-              placeholder="Weight in kgs"
+              placeholder="kgs(metric)/lbs(imp)"
               value={props.weight}
               name="weight"
               id="weight"
@@ -22,7 +23,7 @@ const Form = props => {
             <input
               type="number"
               required
-              placeholder="Height in cm"
+              placeholder="cm(metric)/inch(imp)"
               value={props.height}
               name="height"
               id="height"
